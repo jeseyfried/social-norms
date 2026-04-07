@@ -1,0 +1,19 @@
+- id: overview
+  label: Overview
+  content: |
+    <p>Default overview content.</p>
+
+- id: details
+  label: Details
+  content: |
+    <p>Default details content.</p>
+
+- id: sources
+  label: Sources
+  content: |
+    <p>Default sources content.</p>
+
+- id: notes
+  label: Notes
+  content: |
+    <p>Default notes content.</p>

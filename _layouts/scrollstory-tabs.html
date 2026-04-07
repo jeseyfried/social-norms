@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {% include html/html-head.html %}
+
+  <body>
+    
+    <div class="page-wrap">
+      
+    {% include nav/nav-top.html %}
+
+    {% if page.header-image %}
+      {% include layout/page-header.html
+        image-path  = page.header-image
+        title       = page.header-title
+        subtitle    = page.header-subtitle
+        eyebrow     = page.header-eyebrow
+        divider     = page.header-divider
+        tier        = page.header-tier
+        filter      = page.header-filter
+        bg-position = page.header-position
+        bg-opacity  = page.header-opacity
+        zoom        = page.header-zoom
+        height      = page.header-height
+        caption     = page.header-caption
+      %}
+    {% endif %}
+
+    {% assign tabs_data = page.tabs %}
+    {% if tabs_data == nil or tabs_data.size == 0 %}
+      {% assign tabs_data = site.data.default_scrollstory_tabs %}
+    {% endif %}
+
+    <style>
+      .tabs-wrap {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+        background: rgba(255,255,255,0.96);
+        position: relative;
+        z-index: 5;
+      }
+
+      .tabs-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .tabs-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 1rem 0 0.75rem 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .tab-button {
+        appearance: none;
+        border: 1px solid rgba(0,0,0,0.15);
+        background: #f5f5f5;
+        color: inherit;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+        font: inherit;
+        line-height: 1.2;
+        transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .tab-button:hover,
+      .tab-button:focus {
+        background: #e9e9e9;
+        outline: none;
+      }
+
+      .tab-button[aria-selected="true"] {
+        background: #222;
+        color: #fff;
+        border-color: #222;
+      }
+
+      .tab-panels {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem 2rem 1rem;
+      }
+
+      .tab-panel {
+        display: none;
+        padding-top: 1rem;
+      }
+
+      .tab-panel.is-active {
+        display: block;
+      }
+    </style>
+
+    <div class="tabs-wrap">
+      <div class="tabs-inner">
+        <div class="tabs-list" role="tablist" aria-label="Page sections">
+          {% for tab in tabs_data %}
+            {% assign tab_id = tab.id | default: 'tab-' | append: forloop.index %}
+            <button
+              class="tab-button{% if forloop.first %} is-active{% endif %}"
+              id="tab-{{ tab_id }}"
+              type="button"
+              role="tab"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="panel-{{ tab_id }}"
+              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+              data-tab-target="{{ tab_id }}"
+            >
+              {{ tab.label | default: tab.title | default: "Tab " | append: forloop.index }}
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panels">
+      {% for tab in tabs_data %}
+        {% assign tab_id = tab.id | default: 'tab-' | append: forloop.index %}
+        <section
+          class="tab-panel{% if forloop.first %} is-active{% endif %}"
+          id="panel-{{ tab_id }}"
+          role="tabpanel"
+          aria-labelledby="tab-{{ tab_id }}"
+          {% unless forloop.first %}hidden{% endunless %}
+        >
+          {{ tab.content }}
+        </section>
+      {% endfor %}
+    </div>
+
+    <div class="container">
+      {{ content }}
+    </div> <!-- /container -->
+
+    {% include layout/footer.html %}
+
+    {% include nav/search.html %}
+
+    </div> <!-- /page-wrap -->
+
+    {% include google_analytics.html %}
+
+    {% include html/html-js.html %}
+
+    <script>
+      (function () {
+        const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
+        const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
+
+        if (!tabButtons.length || !tabPanels.length) return;
+
+        function activateTabById(tabId, updateHash = true) {
+          const targetButton = tabButtons.find(btn => btn.dataset.tabTarget === tabId);
+          const targetPanel = document.getElementById('panel-' + tabId);
+
+          if (!targetButton || !targetPanel) return;
+
+          tabButtons.forEach(btn => {
+            const isSelected = btn === targetButton;
+            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            btn.setAttribute('tabindex', isSelected ? '0' : '-1');
+            btn.classList.toggle('is-active', isSelected);
+          });
+
+          tabPanels.forEach(panel => {
+            const isActive = panel === targetPanel;
+            panel.classList.toggle('is-active', isActive);
+            if (isActive) {
+              panel.removeAttribute('hidden');
+            } else {
+              panel.setAttribute('hidden', '');
+            }
+          });
+
+          if (updateHash) {
+            history.replaceState(null, '', '#' + tabId);
+          }
+        }
+
+        tabButtons.forEach((button, index) => {
+          button.addEventListener('click', function () {
+            activateTabById(button.dataset.tabTarget, true);
+          });
+
+          button.addEventListener('keydown', function (event) {
+            let newIndex = null;
+
+            if (event.key === 'ArrowRight') {
+              newIndex = (index + 1) % tabButtons.length;
+            } else if (event.key === 'ArrowLeft') {
+              newIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+            } else if (event.key === 'Home') {
+              newIndex = 0;
+            } else if (event.key === 'End') {
+              newIndex = tabButtons.length - 1;
+            }
+
+            if (newIndex !== null) {
+              event.preventDefault();
+              tabButtons[newIndex].focus();
+              activateTabById(tabButtons[newIndex].dataset.tabTarget, true);
+            }
+          });
+        });
+
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+          activateTabById(hash, false);
+        }
+      })();
+    </script>
+
+    {% if page.autoscroll == true %}
+      {% include scrollybox/auto-scroll.html %}
+    {% endif %}
+
+  </body>
+</html>

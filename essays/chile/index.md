@@ -1,9 +1,30 @@
 ---
 title: "Chiles: The Heat That Built the Southwest"
-layout: scrollstory
+layout: scrollstory-tabs
 header-image: images/figure_1.jpg
 thumbnail: images/figure_1.jpg
 summary: How a Mesoamerican crop became the defining flavor of the American Southwest—and why one plant changed everything.
+tabs:
+  - id: overview
+    label: Overview
+    content: |
+      <p>This is the overview tab content.</p>
+      <p>You can include HTML here.</p>
+
+  - id: people
+    label: People
+    content: |
+      <p>This tab is about people.</p>
+
+  - id: places
+    label: Places
+    content: |
+      <p>This tab is about places.</p>
+
+  - id: timeline
+    label: Timeline
+    content: |
+      <p>This tab is about chronology.</p>
 ---
 
 # Chiles: The Heat That Built the Southwest
