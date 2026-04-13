@@ -86,13 +86,13 @@
       }
     </style>
 
-    <div class="tabs-wrap">
+    <div class="tabs-wrap" id="tabs">
       <div class="tabs-inner">
         <nav class="tabs-list" aria-label="Page sections">
           {% for tab in tabs_data %}
             <a
               class="tab-link{% if tab.active %} is-active{% endif %}"
-              href="{{ tab.url | relative_url }}"
+              href="{{ tab.url }}#tabs"
               {% if tab.active %}aria-current="page"{% endif %}
             >
               {{ tab.label | default: tab.title | default: "Tab " | append: forloop.index }}
