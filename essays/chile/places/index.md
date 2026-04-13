@@ -1,0 +1,52 @@
+---
+title: "Places - Chiles"
+layout: scrollstory-tabs
+header-image: ../images/figure_1.jpg
+thumbnail: ../images/figure_1.jpg
+summary: The landscapes and regions that shaped chile cultivation and culture.
+tabs:
+  - id: overview
+    label: Overview
+    url: ../
+
+  - id: people
+    label: People
+    url: ../people/
+
+  - id: places
+    label: Places
+    url: ./
+    active: true
+
+  - id: timeline
+    label: Timeline
+    url: ../timeline/
+---
+
+# The Places of the Chile
+
+From wild origins in the Mexican highlands to cultivation across the globe, geography has shaped every aspect of chile culture.
+
+## Mesoamerican Origins
+
+Archaeological evidence points to the highlands of central Mexico as the birthplace of chile cultivation. Wild chiles still grow in these regions, their small, intensely hot fruits carried by birds who are immune to capsaicin. The volcanic soils and seasonal rainfall patterns of these areas created ideal conditions for the chile's evolution.
+
+## The Rio Grande Valley
+
+When chiles arrived in what is now New Mexico, they found a new home in the Rio Grande Valley. The combination of high elevation, intense sunlight, cool nights, and irrigation from the river created conditions that produced uniquely flavorful chiles.
+
+Towns like Hatch, Chimayó, and Española became synonymous with chile cultivation. Each developed distinct varieties adapted to local microclimates, creating a patchwork of regional flavors.
+
+## The Global Journey
+
+Within two centuries of Columbus, chiles had spread to nearly every continent. They found new homes in:
+- **India and Thailand**, where they transformed regional cuisines
+- **Hungary**, where they became paprika
+- **Korea**, where they became essential to kimchi
+- **Africa**, where they integrated with local cooking traditions
+
+Each place shaped the chile, selecting for different characteristics and integrating it into local food cultures.
+
+## Modern Growing Regions
+
+Today, commercial chile production spans from New Mexico to California, from China to India. Climate change is shifting growing regions, pushing cultivation to new altitudes and latitudes as traditional areas become too hot or dry.

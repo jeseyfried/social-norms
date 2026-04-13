@@ -56,8 +56,8 @@
         list-style: none;
       }
 
-      .tab-button {
-        appearance: none;
+      .tab-link {
+        display: inline-block;
         border: 1px solid rgba(0,0,0,0.15);
         background: #f5f5f5;
         color: inherit;
@@ -66,72 +66,40 @@
         cursor: pointer;
         font: inherit;
         line-height: 1.2;
+        text-decoration: none;
         transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       }
 
-      .tab-button:hover,
-      .tab-button:focus {
+      .tab-link:hover,
+      .tab-link:focus {
         background: #e9e9e9;
         outline: none;
+        text-decoration: none;
+        color: inherit;
       }
 
-      .tab-button[aria-selected="true"] {
+      .tab-link.is-active,
+      .tab-link[aria-current="page"] {
         background: #222;
         color: #fff;
         border-color: #222;
-      }
-
-      .tab-panels {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem 2rem 1rem;
-      }
-
-      .tab-panel {
-        display: none;
-        padding-top: 1rem;
-      }
-
-      .tab-panel.is-active {
-        display: block;
       }
     </style>
 
     <div class="tabs-wrap">
       <div class="tabs-inner">
-        <div class="tabs-list" role="tablist" aria-label="Page sections">
+        <nav class="tabs-list" aria-label="Page sections">
           {% for tab in tabs_data %}
-            {% assign tab_id = tab.id | default: 'tab-' | append: forloop.index %}
-            <button
-              class="tab-button{% if forloop.first %} is-active{% endif %}"
-              id="tab-{{ tab_id }}"
-              type="button"
-              role="tab"
-              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-              aria-controls="panel-{{ tab_id }}"
-              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
-              data-tab-target="{{ tab_id }}"
+            <a
+              class="tab-link{% if tab.active %} is-active{% endif %}"
+              href="{{ tab.url | relative_url }}"
+              {% if tab.active %}aria-current="page"{% endif %}
             >
               {{ tab.label | default: tab.title | default: "Tab " | append: forloop.index }}
-            </button>
+            </a>
           {% endfor %}
-        </div>
+        </nav>
       </div>
-    </div>
-
-    <div class="tab-panels">
-      {% for tab in tabs_data %}
-        {% assign tab_id = tab.id | default: 'tab-' | append: forloop.index %}
-        <section
-          class="tab-panel{% if forloop.first %} is-active{% endif %}"
-          id="panel-{{ tab_id }}"
-          role="tabpanel"
-          aria-labelledby="tab-{{ tab_id }}"
-          {% unless forloop.first %}hidden{% endunless %}
-        >
-          {{ tab.content }}
-        </section>
-      {% endfor %}
     </div>
 
     <div class="container">
@@ -147,74 +115,6 @@
     {% include google_analytics.html %}
 
     {% include html/html-js.html %}
-
-    <script>
-      (function () {
-        const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
-        const tabPanels = Array.from(document.querySelectorAll('.tab-panel'));
-
-        if (!tabButtons.length || !tabPanels.length) return;
-
-        function activateTabById(tabId, updateHash = true) {
-          const targetButton = tabButtons.find(btn => btn.dataset.tabTarget === tabId);
-          const targetPanel = document.getElementById('panel-' + tabId);
-
-          if (!targetButton || !targetPanel) return;
-
-          tabButtons.forEach(btn => {
-            const isSelected = btn === targetButton;
-            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-            btn.setAttribute('tabindex', isSelected ? '0' : '-1');
-            btn.classList.toggle('is-active', isSelected);
-          });
-
-          tabPanels.forEach(panel => {
-            const isActive = panel === targetPanel;
-            panel.classList.toggle('is-active', isActive);
-            if (isActive) {
-              panel.removeAttribute('hidden');
-            } else {
-              panel.setAttribute('hidden', '');
-            }
-          });
-
-          if (updateHash) {
-            history.replaceState(null, '', '#' + tabId);
-          }
-        }
-
-        tabButtons.forEach((button, index) => {
-          button.addEventListener('click', function () {
-            activateTabById(button.dataset.tabTarget, true);
-          });
-
-          button.addEventListener('keydown', function (event) {
-            let newIndex = null;
-
-            if (event.key === 'ArrowRight') {
-              newIndex = (index + 1) % tabButtons.length;
-            } else if (event.key === 'ArrowLeft') {
-              newIndex = (index - 1 + tabButtons.length) % tabButtons.length;
-            } else if (event.key === 'Home') {
-              newIndex = 0;
-            } else if (event.key === 'End') {
-              newIndex = tabButtons.length - 1;
-            }
-
-            if (newIndex !== null) {
-              event.preventDefault();
-              tabButtons[newIndex].focus();
-              activateTabById(tabButtons[newIndex].dataset.tabTarget, true);
-            }
-          });
-        });
-
-        const hash = window.location.hash.replace('#', '');
-        if (hash) {
-          activateTabById(hash, false);
-        }
-      })();
-    </script>
 
     {% if page.autoscroll == true %}
       {% include scrollybox/auto-scroll.html %}

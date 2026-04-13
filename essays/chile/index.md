@@ -7,24 +7,20 @@ summary: How a Mesoamerican crop became the defining flavor of the American Sout
 tabs:
   - id: overview
     label: Overview
-    content: |
-      <p>This is the overview tab content.</p>
-      <p>You can include HTML here.</p>
+    url: ./
+    active: true
 
   - id: people
     label: People
-    content: |
-      <p>This tab is about people.</p>
+    url: people/
 
   - id: places
     label: Places
-    content: |
-      <p>This tab is about places.</p>
+    url: places/
 
   - id: timeline
     label: Timeline
-    content: |
-      <p>This tab is about chronology.</p>
+    url: timeline/
 ---
 
 # Chiles: The Heat That Built the Southwest
