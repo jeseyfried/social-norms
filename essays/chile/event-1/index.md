@@ -1,7 +1,8 @@
 ---
-title: "People - Chiles"
+title: "Event 1 of a Series of Events"
 layout: scrollstory-tabs
 header-image: ../images/figure_1.jpg
+header-title: "Event 1 in a Series of Events That Happened"
 thumbnail: ../images/figure_1.jpg
 summary: The people who cultivated, traded, and transformed chiles into a cultural icon.
 tabs:
@@ -9,10 +10,9 @@ tabs:
     label: Overview
     url: ../
 
-  - id: people
-    label: People
-    url: ./
-    active: true
+  - id: event-1
+    label: Event 1
+    url: event-1/
 
   - id: places
     label: Places
@@ -23,7 +23,7 @@ tabs:
     url: ../timeline/
 ---
 
-# The People Behind the Chile
+# Event 1
 
 The story of chiles is fundamentally a story of people—farmers, traders, cooks, and communities who recognized something special in this fiery plant and made it their own.
 

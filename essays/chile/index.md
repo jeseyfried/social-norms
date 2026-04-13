@@ -2,6 +2,7 @@
 title: "Chiles: The Heat That Built the Southwest"
 layout: scrollstory-tabs
 header-image: images/figure_1.jpg
+header-title: "A Series of Events That Happened"
 thumbnail: images/figure_1.jpg
 summary: How a Mesoamerican crop became the defining flavor of the American Southwest—and why one plant changed everything.
 tabs:
@@ -10,9 +11,9 @@ tabs:
     url: ./
     active: true
 
-  - id: people
-    label: People
-    url: people/
+  - id: event-1
+    label: Event 1
+    url: event-1/
 
   - id: places
     label: Places
