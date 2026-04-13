@@ -15,16 +15,16 @@ tabs:
     label: Event 1
     url: event-1/
 
-  - id: places
-    label: Places
-    url: places/
+  - id: event-2
+    label: Event 2
+    url: event-2/
 
-  - id: timeline
-    label: Timeline
-    url: timeline/
+  - id: event-3
+    label: Event 3
+    url: event-3/
 ---
 
-# Chiles: The Heat That Built the Southwest
+# This is the overview of the series of events
 
 Before the Spanish arrived, before the United States existed, before the concept of the Southwest was even imagined, there were chiles. Not the long red ristras you see hanging on gallery walls, not the hot sauces in grocery stores, not even the dried red chile sauce that defines New Mexican cooking. But *chiles*—wild, small, incredibly pungent plants that grew in what is now Mexico and Central America.
 

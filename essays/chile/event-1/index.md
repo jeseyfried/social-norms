@@ -13,17 +13,18 @@ tabs:
   - id: event-1
     label: Event 1
     url: event-1/
+    active: true
 
-  - id: places
-    label: Places
-    url: ../places/
+  - id: event-2
+    label: Event 2
+    url: event-2/
 
-  - id: timeline
-    label: Timeline
-    url: ../timeline/
+  - id: event-3
+    label: Event 3
+    url: event-3/
 ---
 
-# Event 1
+# This is the first even that happened
 
 The story of chiles is fundamentally a story of people—farmers, traders, cooks, and communities who recognized something special in this fiery plant and made it their own.
 

@@ -1,7 +1,8 @@
 ---
-title: "Timeline - Chiles"
+title: "The Third Event That Happened"
 layout: scrollstory-tabs
 header-image: ../images/figure_1.jpg
+header-title: "Event 3 in a Series of Events That Happened"
 thumbnail: ../images/figure_1.jpg
 summary: A chronological journey through the history of chile cultivation and culture.
 tabs:
@@ -9,21 +10,21 @@ tabs:
     label: Overview
     url: ../
 
-  - id: people
-    label: People
-    url: ../people/
+  - id: event-1
+    label: Event 1
+    url: event-1/
 
-  - id: places
-    label: Places
-    url: ../places/
+  - id: event-2
+    label: Event 2
+    url: event-2/
 
-  - id: timeline
-    label: Timeline
-    url: ./
+  - id: event-3
+    label: Event 3
+    url: event-3/
     active: true
 ---
 
-# Timeline of the Chile
+# This is the third event that happened
 
 From ancient cultivation to modern cuisine, the chile's journey spans thousands of years.
 

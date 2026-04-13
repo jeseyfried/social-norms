@@ -95,7 +95,7 @@
               href="{{ tab.url }}#tabs"
               {% if tab.active %}aria-current="page"{% endif %}
             >
-              {{ tab.label | default: tab.title | default: "Tab " | append: forloop.index }}
+              {{ tab.label | default: tab.title | default: "Tab" }}
             </a>
           {% endfor %}
         </nav>

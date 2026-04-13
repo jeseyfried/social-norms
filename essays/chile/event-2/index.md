@@ -1,7 +1,8 @@
 ---
-title: "Places - Chiles"
+title: "Event 2 in a Series of Events That Happened"
 layout: scrollstory-tabs
 header-image: ../images/figure_1.jpg
+header-title: "Event 2 in a Series of Events That Happened"
 thumbnail: ../images/figure_1.jpg
 summary: The landscapes and regions that shaped chile cultivation and culture.
 tabs:
@@ -9,21 +10,22 @@ tabs:
     label: Overview
     url: ../
 
-  - id: people
-    label: People
-    url: ../people/
+  - id: event-1
+    label: Event 1
+    url: event-1/
 
-  - id: places
-    label: Places
-    url: ./
+
+  - id: event-2
+    label: Event 2
+    url: event-2/
     active: true
 
-  - id: timeline
-    label: Timeline
-    url: ../timeline/
+  - id: event-3
+    label: Event 3
+    url: event-3/
 ---
 
-# The Places of the Chile
+# This the is the second event that happened
 
 From wild origins in the Mexican highlands to cultivation across the globe, geography has shaped every aspect of chile culture.
 
