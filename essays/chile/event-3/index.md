@@ -24,7 +24,7 @@ tabs:
     active: true
 ---
 
-# This is the third event that happened
+# Event 3 in a series of events that happened
 
 From ancient cultivation to modern cuisine, the chile's journey spans thousands of years.
 
