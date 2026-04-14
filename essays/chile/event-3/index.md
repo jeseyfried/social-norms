@@ -12,15 +12,15 @@ tabs:
 
   - id: event-1
     label: Event 1
-    url: event-1/
+    url: ../event-1/
 
   - id: event-2
     label: Event 2
-    url: event-2/
+    url: ../event-2/
 
   - id: event-3
     label: Event 3
-    url: event-3/
+    url: ../event-3/
     active: true
 ---
 

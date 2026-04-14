@@ -12,16 +12,16 @@ tabs:
 
   - id: event-1
     label: Event 1
-    url: event-1/
+    url: ../event-1/
     active: true
 
   - id: event-2
     label: Event 2
-    url: event-2/
+    url: ../event-2/
 
   - id: event-3
     label: Event 3
-    url: event-3/
+    url: ../event-3/
 ---
 
 # This is the first event that happened
