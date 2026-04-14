@@ -10,6 +10,7 @@ This template includes three sample essays on Southwest food history — nachos,
 
 Browse them to get a feel for the format. When you're ready to build your own project, you'll replace these with your students' essays — same structure, your topic.
 
+
 {% assign all_pages = site.pages %}
 
 {% assign cards = all_pages
