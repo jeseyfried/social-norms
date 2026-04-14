@@ -24,7 +24,7 @@ tabs:
     url: event-3/
 ---
 
-# This is the first even that happened
+# This is the first event that happened
 
 The story of chiles is fundamentally a story of people—farmers, traders, cooks, and communities who recognized something special in this fiery plant and made it their own.
 
