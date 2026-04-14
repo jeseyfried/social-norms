@@ -17,7 +17,6 @@ Browse them to get a feel for the format. When you're ready to build your own pr
   | where_exp: "p", "p.path contains 'essays/'"
   | where_exp: "p", "p.path != 'essays/index.md'"
   | where_exp: "p", "p.path contains '/index.md'"
-  | where_exp: "p", "p.path split: '/' | size == 3"
 %}
 
 {% include nav/card-grid.html cards=cards %}
