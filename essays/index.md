@@ -11,6 +11,16 @@ This template includes three sample essays on Southwest food history — nachos,
 Browse them to get a feel for the format. When you're ready to build your own project, you'll replace these with your students' essays — same structure, your topic.
 
 {% assign all_pages = site.pages %}
-{% assign cards = all_pages | where_exp: "p", "p.path contains 'essays/'" | where_exp: "p", "p.path != 'essays/<top-level-folder>/index.md'" %}
+
+{%- comment -%}
+Only include essay landing pages: essays/<slug>/index.md
+Exclude essays/index.md and any deeper pages like essays/<slug>/<sub>/index.md
+{%- endcomment -%}
+{% assign cards = all_pages
+  | where_exp: "p", "p.path contains 'essays/'"
+  | where_exp: "p", "p.path != 'essays/index.md'"
+  | where_exp: "p", "p.path contains '/index.md'"
+  | where_exp: "p", "p.path split: '/' | size == 3"
+%}
 
 {% include nav/card-grid.html cards=cards %}
