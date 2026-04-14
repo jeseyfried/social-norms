@@ -8,19 +8,19 @@ summary: A chronological journey through the history of chile cultivation and cu
 tabs:
   - id: overview
     label: Overview of McCarthyism
-    url: ./
+    url: ../
 
   - id: event-1
     label: The Second Red Scare
-    url: event-1/
+    url: ../event-1/
 
   - id: event-2
     label: The McCarthy Hearings
-    url: event-2/
+    url: ../event-2/
 
   - id: event-3
     label: The Warren Court
-    url: event-3/
+    url: ../event-3/
     active: true
 ---
 
