@@ -1,30 +1,30 @@
 ---
-title: "Chiles: The Heat That Built the Southwest"
+title: "McCarthyism"
 layout: scrollstory-tabs
-header-image: images/figure_1.jpg
-header-title: "A Series of Events That Happened"
-thumbnail: images/figure_1.jpg
-summary: How a Mesoamerican crop became the defining flavor of the American Southwest—and why one plant changed everything.
+header-image: images/welch-mccarthy.jpg
+header-title: "McCarthyism"
+thumbnail: images/welch-mccarthy.jpg
+summary: A history of McCarthyism from the Second Red Scare to the intervention of the Warren Court.
 tabs:
   - id: overview
-    label: Overview
+    label: Overview of McCarthyism
     url: ./
     active: true
 
   - id: event-1
-    label: Event 1
+    label: The Second Red Scare
     url: event-1/
 
   - id: event-2
-    label: Event 2
+    label: The McCarthy Hearings
     url: event-2/
 
   - id: event-3
-    label: Event 3
+    label: The Warren Court
     url: event-3/
 ---
 
-# This is the overview of the series of events
+# Overview of McCarthyism
 
 Before the Spanish arrived, before the United States existed, before the concept of the Southwest was even imagined, there were chiles. Not the long red ristras you see hanging on gallery walls, not the hot sauces in grocery stores, not even the dried red chile sauce that defines New Mexican cooking. But *chiles*—wild, small, incredibly pungent plants that grew in what is now Mexico and Central America.
 

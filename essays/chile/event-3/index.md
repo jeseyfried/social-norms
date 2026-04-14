@@ -1,30 +1,30 @@
 ---
-title: "The Third Event That Happened"
+title: "The Warren Court"
 layout: scrollstory-tabs
 header-image: ../images/figure_1.jpg
-header-title: "Event 3 in a Series of Events That Happened"
+header-title: "McCarthyism"
 thumbnail: ../images/figure_1.jpg
 summary: A chronological journey through the history of chile cultivation and culture.
 tabs:
   - id: overview
-    label: Overview
-    url: ../
+    label: Overview of McCarthyism
+    url: ./
 
   - id: event-1
-    label: Event 1
-    url: ../event-1/
+    label: The Second Red Scare
+    url: event-1/
 
   - id: event-2
-    label: Event 2
-    url: ../event-2/
+    label: The McCarthy Hearings
+    url: event-2/
 
   - id: event-3
-    label: Event 3
-    url: ../event-3/
+    label: The Warren Court
+    url: event-3/
     active: true
 ---
 
-# Event 3 in a series of events that happened
+# The Warren Court
 
 From ancient cultivation to modern cuisine, the chile's journey spans thousands of years.
 

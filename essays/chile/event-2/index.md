@@ -1,31 +1,30 @@
 ---
-title: "Event 2 in a Series of Events That Happened"
+title: "The McCarthy Hearings"
 layout: scrollstory-tabs
 header-image: ../images/figure_1.jpg
-header-title: "Event 2 in a Series of Events That Happened"
+header-title: "McCarthyism"
 thumbnail: ../images/figure_1.jpg
 summary: The landscapes and regions that shaped chile cultivation and culture.
 tabs:
   - id: overview
-    label: Overview
-    url: ../
+    label: Overview of McCarthyism
+    url: ./
 
   - id: event-1
-    label: Event 1
-    url: ../event-1/
-
-
-  - id: event-2
-    label: Event 2
-    url: ../event-2/
+    label: The Second Red Scare
+    url: event-1/
     active: true
 
+  - id: event-2
+    label: The McCarthy Hearings
+    url: event-2/
+
   - id: event-3
-    label: Event 3
-    url: ../event-3/
+    label: The Warren Court
+    url: event-3/
 ---
 
-# This the is the second event that happened
+# The McCarthy Hearings
 
 From wild origins in the Mexican highlands to cultivation across the globe, geography has shaped every aspect of chile culture.
 

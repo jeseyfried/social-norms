@@ -1,30 +1,30 @@
 ---
-title: "Event 1 of a Series of Events"
+title: "The Second Red Scare"
 layout: scrollstory-tabs
-header-image: ../images/figure_1.jpg
-header-title: "Event 1 in a Series of Events That Happened"
-thumbnail: ../images/figure_1.jpg
-summary: The people who cultivated, traded, and transformed chiles into a cultural icon.
+header-image: ../images/welch-mccarthy.jpg
+header-title: "McCarthyism"
+thumbnail: ../images/welch-mccarthy.jpg
+summary: The Second Red Scare.
 tabs:
   - id: overview
-    label: Overview
-    url: ../
-
-  - id: event-1
-    label: Event 1
-    url: ../event-1/
+    label: Overview of McCarthyism
+    url: ./
     active: true
 
+  - id: event-1
+    label: The Second Red Scare
+    url: event-1/
+
   - id: event-2
-    label: Event 2
-    url: ../event-2/
+    label: The McCarthy Hearings
+    url: event-2/
 
   - id: event-3
-    label: Event 3
-    url: ../event-3/
+    label: The Warren Court
+    url: event-3/
 ---
 
-# This is the first event that happened
+# The Second Red Scare
 
 The story of chiles is fundamentally a story of people—farmers, traders, cooks, and communities who recognized something special in this fiery plant and made it their own.
 
