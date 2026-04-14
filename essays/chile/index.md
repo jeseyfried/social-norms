@@ -26,6 +26,8 @@ tabs:
 
 # Overview of McCarthyism
 
+<script src="https://bibbase.org/show?bib=https%3A%2F%2Fapi.zotero.org%2Fusers%2F9363469%2Fcollections%2FR4SRFT5F%2Fitems%3Fkey%3DXENB3vHdz6oEospeAWK9yjPD%26format%3Dbibtex%26limit%3D100&jsonp=1"></script>
+
 Before the Spanish arrived, before the United States existed, before the concept of the Southwest was even imagined, there were chiles. Not the long red ristras you see hanging on gallery walls, not the hot sauces in grocery stores, not even the dried red chile sauce that defines New Mexican cooking. But *chiles*—wild, small, incredibly pungent plants that grew in what is now Mexico and Central America.
 
 The story of how this plant became the defining ingredient of Southwestern cuisine is the story of climate, conquest, adaptation, and an entire region's relationship to heat—both literal and cultural.
