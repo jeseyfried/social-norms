@@ -23,7 +23,7 @@ Image Carousel test
 %}
 
 {% assign captions =
-"southwest food caption [with a link](https://amaranth.unm.edu/websites/portfolios)|
+"southwest food caption|
 Caption for second image|
 Caption for second image|
 " | split: '|'
